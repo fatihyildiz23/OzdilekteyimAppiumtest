@@ -1,0 +1,8 @@
+Created by testinium on 4.04.2022
+
+This is a concept file with following syntax for each concept.
+# Kullanıcı Adı ve Sifre gir
+*"Username" Kullanıcı Adını gir
+* "pw" Password gir
+*İki kere geri git
+*"2" saniye kadar bekle

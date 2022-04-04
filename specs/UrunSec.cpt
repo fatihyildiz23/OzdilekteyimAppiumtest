@@ -1,0 +1,8 @@
+Created by testinium on 4.04.2022
+
+This is a concept file with following syntax for each concept.
+# Urun Secme
+*"//*[@class='androidx.recyclerview.widget.RecyclerView']/android.widget.RelativeLayout[14]"Pantalon Kategorisini seç
+*kaydır
+*"2" saniye kadar bekle
+*Rastgele ürün seç

@@ -1,0 +1,10 @@
+Created by testinium on 4.04.2022
+
+This is a concept file with following syntax for each concept.
+# Kategorileri Sec
+
+//*"*[@resource-id='com.ozdilek.ozdilekteyim:id/nav_categories']" katagorilere tıkla
+*"//*[@text='Kategoriler']" li  elemetin sayfada gorunur olduğunu kontrol et ve tıkla
+*"//*[@text='Kategoriler']" Xpath kontrolu ile Kategoriler Sayfasi Acildimi Kontrol et
+*"//*[@resource-id='com.ozdilek.ozdilekteyim:id/recyclerCategories']/android.widget.RelativeLayout[2]" li  elemetin sayfada gorunur olduğunu kontrol et ve tıkla
+//*"//*[@resource-id='com.ozdilek.ozdilekteyim:id/recyclerCategories']/android.widget.RelativeLayout[2]"Kadın Katagorisini seç

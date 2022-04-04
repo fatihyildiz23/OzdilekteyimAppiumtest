@@ -1,0 +1,7 @@
+Created by testinium on 4.04.2022
+
+This is a concept file with following syntax for each concept.
+# Rastgele Urun Sec ve Sepete Ekle
+*Rastgele ürün seç
+*"1" saniye kadar bekle
+*"com.ozdilek.ozdilekteyim:id/cardAddToCart" Xpath'li elementi bul ve tıkla

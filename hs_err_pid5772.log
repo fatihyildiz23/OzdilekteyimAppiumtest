@@ -1,0 +1,220 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 130023424 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3530), pid=5772, tid=12900
+#
+# JRE version:  (18.0+36) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (18+36-2087, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 com.thoughtworks.gauge.GaugeRuntime
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1566)
+Time: Mon Apr  4 13:10:34 2022 Türkiye Standart Saati elapsed time: 0.017146 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d1b73ee670):  JavaThread "Unknown thread" [_thread_in_vm, id=12900, stack(0x0000004250f00000,0x0000004251000000)]
+
+Stack: [0x0000004250f00000,0x0000004251000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x69804a]
+V  [jvm.dll+0x7f308d]
+V  [jvm.dll+0x7f499e]
+V  [jvm.dll+0x7f5053]
+V  [jvm.dll+0x25ca3f]
+V  [jvm.dll+0x694f99]
+V  [jvm.dll+0x689aca]
+V  [jvm.dll+0x321efb]
+V  [jvm.dll+0x3298d6]
+V  [jvm.dll+0x37e47e]
+V  [jvm.dll+0x37e6af]
+V  [jvm.dll+0x2f9c7a]
+V  [jvm.dll+0x2facdd]
+V  [jvm.dll+0x7c1cc0]
+V  [jvm.dll+0x38b801]
+V  [jvm.dll+0x7a09d3]
+V  [jvm.dll+0x40d6bf]
+V  [jvm.dll+0x40f091]
+C  [jli.dll+0x526b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffffb40e550, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001d1b744de40 WorkerThread "GC Thread#0" [stack: 0x0000004251000000,0x0000004251100000] [id=13568]
+  0x000001d1b745f350 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000004251100000,0x0000004251200000] [id=11808]
+  0x000001d1b74603f0 WorkerThread "G1 Conc#0" [stack: 0x0000004251200000,0x0000004251300000] [id=9840]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffffac3a217]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001d1b73e8fd0] Heap_lock - owner thread: 0x000001d1b73ee670
+
+Heap address: 0x0000000084a00000, size: 1974 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000084a00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffffb020489]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-18\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff75e0d0000 - 0x00007ff75e0e0000 	C:\Program Files\Java\jdk-18\bin\java.exe
+0x00007ff83cdf0000 - 0x00007ff83cfe5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff83b6a0000 - 0x00007ff83b75e000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff83a7c0000 - 0x00007ff83aa88000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff83a6c0000 - 0x00007ff83a7c0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff827e20000 - 0x00007ff827e38000 	C:\Program Files\Java\jdk-18\bin\jli.dll
+0x00007ff83bf10000 - 0x00007ff83bfbe000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff83cd10000 - 0x00007ff83cdae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff83c500000 - 0x00007ff83c59c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff83afe0000 - 0x00007ff83b105000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff826260000 - 0x00007ff82627a000 	C:\Program Files\Java\jdk-18\bin\VCRUNTIME140.dll
+0x00007ff83c9d0000 - 0x00007ff83cb70000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff83a690000 - 0x00007ff83a6b2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff83b1e0000 - 0x00007ff83b20b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff83aca0000 - 0x00007ff83adab000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff83a560000 - 0x00007ff83a5fd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff80d400000 - 0x00007ff80d69a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff82ef00000 - 0x00007ff82ef0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff83c3b0000 - 0x00007ff83c3e0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff82be90000 - 0x00007ff82be9c000 	C:\Program Files\Java\jdk-18\bin\vcruntime140_1.dll
+0x00007ff8218b0000 - 0x00007ff82193d000 	C:\Program Files\Java\jdk-18\bin\msvcp140.dll
+0x00007ffffa930000 - 0x00007ffffb541000 	C:\Program Files\Java\jdk-18\bin\server\jvm.dll
+0x00007ff83c9c0000 - 0x00007ff83c9c8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffe4730000 - 0x00007fffe4739000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff81ac10000 - 0x00007ff81ac37000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff83c950000 - 0x00007ff83c9bb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff838db0000 - 0x00007ff838dc2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff827d80000 - 0x00007ff827d8a000 	C:\Program Files\Java\jdk-18\bin\jimage.dll
+0x00007ff838050000 - 0x00007ff838234000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff828150000 - 0x00007ff82817c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff83a600000 - 0x00007ff83a682000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff821ab0000 - 0x00007ff821ad5000 	C:\Program Files\Java\jdk-18\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-18\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-18\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: com.thoughtworks.gauge.GaugeRuntime
+java_class_path (initial): C:\Users\testinium\.jdks\openjdk-18!\java.base;C:\Users\testinium\.jdks\openjdk-18!\java.compiler;C:\Users\testinium\.jdks\openjdk-18!\java.datatransfer;C:\Users\testinium\.jdks\openjdk-18!\java.desktop;C:\Users\testinium\.jdks\openjdk-18!\java.instrument;C:\Users\testinium\.jdks\openjdk-18!\java.logging;C:\Users\testinium\.jdks\openjdk-18!\java.management;C:\Users\testinium\.jdks\openjdk-18!\java.management.rmi;C:\Users\testinium\.jdks\openjdk-18!\java.naming;C:\Users\testinium\.jdks\openjdk-18!\java.net.http;C:\Users\testinium\.jdks\openjdk-18!\java.prefs;C:\Users\testinium\.jdks\openjdk-18!\java.rmi;C:\Users\testinium\.jdks\openjdk-18!\java.scripting;C:\Users\testinium\.jdks\openjdk-18!\java.se;C:\Users\testinium\.jdks\openjdk-18!\java.security.jgss;C:\Users\testinium\.jdks\openjdk-18!\java.security.sasl;C:\Users\testinium\.jdks\openjdk-18!\java.smartcardio;C:\Users\testinium\.jdks\openjdk-18!\java.sql;C:\Users\testinium\.jdks\openjdk-18!\java.sql.rowset;C:\Users\testinium\.jdks\openjdk-18!\java.transaction.xa;C:\Users\testinium\.jdks\openjdk-18!\java.xml;C:\Users\testinium\.jdks\openjdk-18!\java.xml.crypto;C:\Users\testinium\.jdks\openjdk-18!\jdk.accessibility;C:\Users\testinium\.jdks\openjdk-18!\jdk.attach;C:\Users\testinium\.jdks\openjdk-18!\jdk.charsets;C:\Users\testinium\.jdks\openjdk-18!\jdk.compiler;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.cryptoki;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.ec;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.mscapi;C:\Users\testinium\.jdks\openjdk-18!\jdk.dynalink;C:\Users\testinium\.jdks\openjdk-18!\jdk.editpad;C:\Users\testinium\.jdks\openjdk-18!\jdk.hotspot.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.httpserver;C:\Users\testinium\.jdks\openjdk-18!\jdk.incubator.foreign;C:\Users\testinium\.jdks\openjdk-18!\jdk.incubator.vector;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.ed;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.jvmstat;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.le;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.opt;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.ci;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.compiler;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.compiler.management;C:\Users\testinium\.jdks\openjdk-18!\jdk.jartool;C:\Users\testinium\.jdks\openjdk-18!\jdk.javadoc;C:\Users\testinium\.jdks\openjdk-18!\jdk.jcmd;C:\Users\testinium\.jdks\openjdk-18!\jdk.jconsole;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdeps;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdi;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdwp.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.jfr;C:\Users\testinium\.jdks\openjdk-18!\jdk.jlink;C:\Users\testinium\.jdks\openjdk-18!\jdk.jpackage;C:\Users\testinium\.jdks\openjdk-18!\jdk.jshell;C:\Users\testinium\.jdks\openjdk-18!\jdk.jsobject;C:\Users\testinium\.jdks\openjdk-18!\jdk.jstatd;C:\Users\testinium\.jdks\openjdk-18!\jdk.localedata;C:\Users\testinium\.jdks\openjdk-18!\jdk.management;C:\Users\testinium\.jdks\openjdk-18!\jdk.management.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.management.jfr;C:\Users\testinium\.jdks\openjdk-18!\jdk.naming.dns;C:\Users\testinium\.jdks\openjdk-18!\jdk.naming.rmi;C:\Users\testinium\.jdks\openjdk-18!\jdk.net;C:\Users\testinium\.jdks\openjdk-18!\jdk.nio.mapmode;C:\Users\testinium\.jdks\openjdk-18!\jdk.random;C:\Users\testinium\.jdks\openjdk-18!\jdk.sctp;C:\Users\testinium\.jdks\openjdk-18!\jdk.security.auth;C:\Users\testinium\.jdks\openjdk-18!\jdk.security.jgss;C:\Users\testinium\.jdks\openjdk-18!\jdk.unsupported;C:\Users\testinium\.jdks\openjdk-18!\jdk.unsupported.desktop;C:\Users\testinium\.jdks\openjdk-18!\jdk.xml.dom;C:\Users\testinium\.jdks\openjdk-18!\jdk.zipfs;C:\Users\testinium\Desktop\OzdilekteyimMobilTest\target\test-classes;C:\Users\testinium\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\testinium\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\testinium\.m2\repository\com\thoughtworks\gauge\gauge-java\0.7.3\gauge-java-0.7.3.jar;C:\Users\testinium\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\testinium\.m2\repository\org\reflections\reflections\0.9.11\reflections-0.9.11.jar;C:\Users\testinium\.m2\repository\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;C:\Users\testinium\.m2\repository\com\github\javaparser\javaparser-core\2.5.1\javaparser-core-2.5.1.jar;C:\Users\testinium\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\testinium\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\testinium\.m2\repository\org\json\json\20190722\json-20190722.jar;C:\Users\testinium\.m2\repository\com\google\protobuf\protobuf-java\3.10.0\protobuf-java-3.10.0.jar;C:\Users\testinium\.m2\repository\com\google\guava\guava\28.1-jre\guava-28.1-jre.jar;C:\Users\testinium\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\testinium\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\testinium\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\testinium\.m2\repository\org\checkerframework\checker-qual\2.8.1\checker-qual-2.8.1.jar;C:\Users\testinium\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.2\error_prone_annotations-2.3.2.jar;C:\Users\testinium\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\testinium\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.18\animal-sniffer-annotations-1.18.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-netty-shaded\1.25.0\grpc-netty-shaded-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-core\1.25.0\grpc-core-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-api\1.25.0\grpc-api-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-context\1.25.0\grpc-context-1.25.0.jar;C:\Users\testinium\.m2\repository\com\google\android\annotations\4.1.1.4\annotations-4.1.1.4.jar;C:\Users\testinium\.m2\repository\io\perfmark\perfmark-api\0.19.0\perfmark-api-0.19.0.jar;C:\Users\testinium\.m2\repository\io\opencensus\opencensus-api\0.21.0\opencensus-api-0.21.0.jar;C:\Users\testinium\.m2\repository\io\opencensus\opencensus-contrib-grpc-metrics\0.21.0\opencensus-contrib-grpc-metrics-0.21.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-protobuf\1.24.1\grpc-protobuf-1.24.1.jar;C:\Users\testinium\.m2\repository\com\google\api\grpc\proto-google-common-protos\1.12.0\proto-google-common-protos-1.12.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-protobuf-lite\1.24.1\grpc-protobuf-lite-1.24.1.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-stub\1.24.1\grpc-stub-1.24.1.jar;C:\Users\testinium\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\testinium\.m2\repository\io\appium\java-client\7.3.0\java-client-7.3.0.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\testinium\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\testinium\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\testinium\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\testinium\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\testinium\.m2\repository\org\apache\httpcomponents\httpclient\4.5.9\httpclient-4.5.9.jar;C:\Users\testinium\.m2\repository\org\apache\httpcomponents\httpcore\4.4.11\httpcore-4.4.11.jar;C:\Users\testinium\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\testinium\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\testinium\.m2\repository\cglib\cglib\3.2.12\cglib-3.2.12.jar;C:\Users\testinium\.m2\repository\org\ow2\asm\asm\7.1\asm-7.1.jar;C:\Users\testinium\.m2\repository\commons-validator\commons-validator\1.6\commons-validator-1.6.jar;C:\Users\testinium\.m2\repository\commons-beanutils\commons-beanutils\1.9.2\commons-beanutils-1.9.2.jar;C:\Users\testinium\.m2\repository\commons-digester\commons-digester\1.8.1\commons-digester-1.8.1.jar;C:\Users\testinium\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\testinium\.m2\repository\org\apache\commons\commons-lang3\3.9\commons-lang3-3.9.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-context\5.1.8.RELEASE\spring-context-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-aop\5.1.8.RELEASE\spring-aop-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-beans\5.1.8.RELEASE\spring-beans-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-core\5.1.8.RELEASE\spring-core-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-jcl\5.1.8.RELEASE\spring-jcl-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-expression\5.1.8.RELEASE\spring-expression-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\aspectj\aspectjweaver\1.9.4\aspectjweaver-1.9.4.jar;C:\Users\testinium\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\testinium\.m2\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;C:\Users\testinium\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 130023424                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2069889024                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2069889024                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-18
+CLASSPATH=C:\Users\testinium\.jdks\openjdk-18!\java.base;C:\Users\testinium\.jdks\openjdk-18!\java.compiler;C:\Users\testinium\.jdks\openjdk-18!\java.datatransfer;C:\Users\testinium\.jdks\openjdk-18!\java.desktop;C:\Users\testinium\.jdks\openjdk-18!\java.instrument;C:\Users\testinium\.jdks\openjdk-18!\java.logging;C:\Users\testinium\.jdks\openjdk-18!\java.management;C:\Users\testinium\.jdks\openjdk-18!\java.management.rmi;C:\Users\testinium\.jdks\openjdk-18!\java.naming;C:\Users\testinium\.jdks\openjdk-18!\java.net.http;C:\Users\testinium\.jdks\openjdk-18!\java.prefs;C:\Users\testinium\.jdks\openjdk-18!\java.rmi;C:\Users\testinium\.jdks\openjdk-18!\java.scripting;C:\Users\testinium\.jdks\openjdk-18!\java.se;C:\Users\testinium\.jdks\openjdk-18!\java.security.jgss;C:\Users\testinium\.jdks\openjdk-18!\java.security.sasl;C:\Users\testinium\.jdks\openjdk-18!\java.smartcardio;C:\Users\testinium\.jdks\openjdk-18!\java.sql;C:\Users\testinium\.jdks\openjdk-18!\java.sql.rowset;C:\Users\testinium\.jdks\openjdk-18!\java.transaction.xa;C:\Users\testinium\.jdks\openjdk-18!\java.xml;C:\Users\testinium\.jdks\openjdk-18!\java.xml.crypto;C:\Users\testinium\.jdks\openjdk-18!\jdk.accessibility;C:\Users\testinium\.jdks\openjdk-18!\jdk.attach;C:\Users\testinium\.jdks\openjdk-18!\jdk.charsets;C:\Users\testinium\.jdks\openjdk-18!\jdk.compiler;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.cryptoki;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.ec;C:\Users\testinium\.jdks\openjdk-18!\jdk.crypto.mscapi;C:\Users\testinium\.jdks\openjdk-18!\jdk.dynalink;C:\Users\testinium\.jdks\openjdk-18!\jdk.editpad;C:\Users\testinium\.jdks\openjdk-18!\jdk.hotspot.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.httpserver;C:\Users\testinium\.jdks\openjdk-18!\jdk.incubator.foreign;C:\Users\testinium\.jdks\openjdk-18!\jdk.incubator.vector;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.ed;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.jvmstat;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.le;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.opt;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.ci;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.compiler;C:\Users\testinium\.jdks\openjdk-18!\jdk.internal.vm.compiler.management;C:\Users\testinium\.jdks\openjdk-18!\jdk.jartool;C:\Users\testinium\.jdks\openjdk-18!\jdk.javadoc;C:\Users\testinium\.jdks\openjdk-18!\jdk.jcmd;C:\Users\testinium\.jdks\openjdk-18!\jdk.jconsole;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdeps;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdi;C:\Users\testinium\.jdks\openjdk-18!\jdk.jdwp.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.jfr;C:\Users\testinium\.jdks\openjdk-18!\jdk.jlink;C:\Users\testinium\.jdks\openjdk-18!\jdk.jpackage;C:\Users\testinium\.jdks\openjdk-18!\jdk.jshell;C:\Users\testinium\.jdks\openjdk-18!\jdk.jsobject;C:\Users\testinium\.jdks\openjdk-18!\jdk.jstatd;C:\Users\testinium\.jdks\openjdk-18!\jdk.localedata;C:\Users\testinium\.jdks\openjdk-18!\jdk.management;C:\Users\testinium\.jdks\openjdk-18!\jdk.management.agent;C:\Users\testinium\.jdks\openjdk-18!\jdk.management.jfr;C:\Users\testinium\.jdks\openjdk-18!\jdk.naming.dns;C:\Users\testinium\.jdks\openjdk-18!\jdk.naming.rmi;C:\Users\testinium\.jdks\openjdk-18!\jdk.net;C:\Users\testinium\.jdks\openjdk-18!\jdk.nio.mapmode;C:\Users\testinium\.jdks\openjdk-18!\jdk.random;C:\Users\testinium\.jdks\openjdk-18!\jdk.sctp;C:\Users\testinium\.jdks\openjdk-18!\jdk.security.auth;C:\Users\testinium\.jdks\openjdk-18!\jdk.security.jgss;C:\Users\testinium\.jdks\openjdk-18!\jdk.unsupported;C:\Users\testinium\.jdks\openjdk-18!\jdk.unsupported.desktop;C:\Users\testinium\.jdks\openjdk-18!\jdk.xml.dom;C:\Users\testinium\.jdks\openjdk-18!\jdk.zipfs;C:\Users\testinium\Desktop\OzdilekteyimMobilTest\target\test-classes;C:\Users\testinium\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\testinium\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\testinium\.m2\repository\com\thoughtworks\gauge\gauge-java\0.7.3\gauge-java-0.7.3.jar;C:\Users\testinium\.m2\repository\org\assertj\assertj-core\3.14.0\assertj-core-3.14.0.jar;C:\Users\testinium\.m2\repository\org\reflections\reflections\0.9.11\reflections-0.9.11.jar;C:\Users\testinium\.m2\repository\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;C:\Users\testinium\.m2\repository\com\github\javaparser\javaparser-core\2.5.1\javaparser-core-2.5.1.jar;C:\Users\testinium\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\testinium\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\testinium\.m2\repository\org\json\json\20190722\json-20190722.jar;C:\Users\testinium\.m2\repository\com\google\protobuf\protobuf-java\3.10.0\protobuf-java-3.10.0.jar;C:\Users\testinium\.m2\repository\com\google\guava\guava\28.1-jre\guava-28.1-jre.jar;C:\Users\testinium\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\testinium\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\testinium\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\testinium\.m2\repository\org\checkerframework\checker-qual\2.8.1\checker-qual-2.8.1.jar;C:\Users\testinium\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.2\error_prone_annotations-2.3.2.jar;C:\Users\testinium\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\testinium\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.18\animal-sniffer-annotations-1.18.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-netty-shaded\1.25.0\grpc-netty-shaded-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-core\1.25.0\grpc-core-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-api\1.25.0\grpc-api-1.25.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-context\1.25.0\grpc-context-1.25.0.jar;C:\Users\testinium\.m2\repository\com\google\android\annotations\4.1.1.4\annotations-4.1.1.4.jar;C:\Users\testinium\.m2\repository\io\perfmark\perfmark-api\0.19.0\perfmark-api-0.19.0.jar;C:\Users\testinium\.m2\repository\io\opencensus\opencensus-api\0.21.0\opencensus-api-0.21.0.jar;C:\Users\testinium\.m2\repository\io\opencensus\opencensus-contrib-grpc-metrics\0.21.0\opencensus-contrib-grpc-metrics-0.21.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-protobuf\1.24.1\grpc-protobuf-1.24.1.jar;C:\Users\testinium\.m2\repository\com\google\api\grpc\proto-google-common-protos\1.12.0\proto-google-common-protos-1.12.0.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-protobuf-lite\1.24.1\grpc-protobuf-lite-1.24.1.jar;C:\Users\testinium\.m2\repository\io\grpc\grpc-stub\1.24.1\grpc-stub-1.24.1.jar;C:\Users\testinium\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\testinium\.m2\repository\io\appium\java-client\7.3.0\java-client-7.3.0.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\testinium\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\testinium\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\testinium\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\testinium\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\testinium\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\testinium\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\testinium\.m2\repository\org\apache\httpcomponents\httpclient\4.5.9\httpclient-4.5.9.jar;C:\Users\testinium\.m2\repository\org\apache\httpcomponents\httpcore\4.4.11\httpcore-4.4.11.jar;C:\Users\testinium\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\testinium\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\testinium\.m2\repository\cglib\cglib\3.2.12\cglib-3.2.12.jar;C:\Users\testinium\.m2\repository\org\ow2\asm\asm\7.1\asm-7.1.jar;C:\Users\testinium\.m2\repository\commons-validator\commons-validator\1.6\commons-validator-1.6.jar;C:\Users\testinium\.m2\repository\commons-beanutils\commons-beanutils\1.9.2\commons-beanutils-1.9.2.jar;C:\Users\testinium\.m2\repository\commons-digester\commons-digester\1.8.1\commons-digester-1.8.1.jar;C:\Users\testinium\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\testinium\.m2\repository\org\apache\commons\commons-lang3\3.9\commons-lang3-3.9.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-context\5.1.8.RELEASE\spring-context-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-aop\5.1.8.RELEASE\spring-aop-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-beans\5.1.8.RELEASE\spring-beans-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-core\5.1.8.RELEASE\spring-core-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-jcl\5.1.8.RELEASE\spring-jcl-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\springframework\spring-expression\5.1.8.RELEASE\spring-expression-5.1.8.RELEASE.jar;C:\Users\testinium\.m2\repository\org\aspectj\aspectjweaver\1.9.4\aspectjweaver-1.9.4.jar;C:\Users\testinium\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\testinium\.m2\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;C:\Users\testinium\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Micro Focus\Unified Functional Testing\bin;C:\Program Files\nodejs\;C:\Program Files\Gauge\bin;C:\Users\testinium\AppData\Local\Android\Sdk\platform-tools;C:\Users\testinium\AppData\Local\Android\Sdk\build-tools;C:\Users\testinium\AppData\Local\Android\Sdk\platforms;C:\Program Files\maven\apache-maven-3.8.5\bin;C:\Users\testinium\AppData\Local\Microsoft\WindowsApps;C:\Users\testinium\AppData\Local\GitHubDesktop\bin;C:\Users\testinium\AppData\Roaming\npm;C:\Program Files\apache-maven-3.8.5-bin;;C:\Users\testinium\AppData\Roaming\gauge\plugins\screenshot\0.0.1
+USERNAME=testinium
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1566)
+OS uptime: 0 days 3:26 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x66, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi
+
+Memory: 4k page, system-wide physical 7894M (67M free)
+TotalPageFile size 32470M (AvailPageFile size 72M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 184M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (18+36-2087) for windows-amd64 JRE (18+36-2087), built on Feb 15 2022 09:43:11 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.
